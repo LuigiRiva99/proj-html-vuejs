@@ -9,12 +9,16 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
 import {
-    faSearch
+    faSearch,
+    faCloud,
+    faTabletScreenButton,
+    faStopwatch,
+    faGaugeHigh
 } from '@fortawesome/free-solid-svg-icons'
 
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faSearch,fab)
+library.add(faSearch,fab,faCloud,faTabletScreenButton,faStopwatch,faGaugeHigh)
 
 const app = createApp(App)
 

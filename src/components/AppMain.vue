@@ -1,9 +1,11 @@
 <template>
+    <!-- intro section -->
     <section class="intro_section flex">
-        <div class="intro_description">
+        <div class="intro_description col-6">
             <div>
                 <p class="experience">17 years of experience</p>
                 <h1 class="intro_title">We Are a <br/>Web Design <span class="title_agency">Agency</span></h1>
+                <AppDivider/>
             </div>
             <p class="intro_subtitle">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separeted they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Separeted they live in Bookmarksgrove</p>
             <AppButton class="intro_button" :buttonText="'READ MORE'"/>
@@ -22,13 +24,34 @@
             </div>
         </div>
     </section>
+
+    <!-- benefits section -->
+    <section class="benefits">
+        <div class="row">
+            <div class="col-5">
+                <h2 class="benefits_title">We Are Here To Make Your <span>Website</span> Look More <span>Elegant</span> And Stylish!</h2>
+                <AppDivider/>
+                <AppButton :buttonText="'VIEW ALL'"/>
+            </div>
+            <div class="row col-7 cards">
+                <BenefitCard class="col-6" :icon="'fa-solid fa-gauge-high'" :cardTitle="'Speed Optimization'"/>
+                <BenefitCard class="col-6" :icon="'fa-solid fa-cloud'" :cardTitle="'Cloud Solutions'"/>
+                <BenefitCard class="col-6" :icon="'fa-solid fa-tablet-screen-button'" :cardTitle="'Website Design'"/>
+                <BenefitCard class="col-6" :icon="'fa-solid fa-stopwatch'" :cardTitle="'Online Marketing'"/>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
-import AppButton from './AppButton.vue'
+import AppButton from './AppButton.vue';
+import BenefitCard from './BenefitCard.vue';
+import AppDivider from './AppDivider.vue'
     export default {
         components: {
-            AppButton
+            AppButton,
+            BenefitCard,
+            AppDivider
         },
         
         data() {
@@ -41,7 +64,7 @@ import AppButton from './AppButton.vue'
 
 <style lang="scss" scoped>
 @use '../style/partials/variables' as *;
-
+//intro section
 .intro_section {
     align-items: center;
     height: 900px;
@@ -52,7 +75,6 @@ import AppButton from './AppButton.vue'
 }
 
 .intro_description {
-    width: 50%;
     padding: 50px 50px 50px 100px;
 
     .intro_title{
@@ -115,6 +137,27 @@ import AppButton from './AppButton.vue'
         .page_one{
             background: rgb(139,224,100);
             background: linear-gradient(90deg, rgba(139,224,100,1) 27%, rgba(0,217,166,1) 90%); 
+        }
+    }
+}
+
+//benefits section
+.benefits {
+    padding: 200px 15px;
+
+    .cards{
+        & > *{
+            padding: 15px;
+        }
+    }
+
+    .benefits_title{
+        font-size: 50px;
+        line-height: 80px;
+        padding-right: 100px;
+
+        span{
+            color: $brand-color;
         }
     }
 }
