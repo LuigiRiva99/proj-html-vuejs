@@ -81,7 +81,6 @@ import AppButton from './AppButton.vue'
 
 .header_nav{
     height: 100px;
-    border: 1px solid black;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
