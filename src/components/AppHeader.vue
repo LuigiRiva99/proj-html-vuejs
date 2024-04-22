@@ -1,15 +1,65 @@
 <template>
-    <div>
-        <h1>Header</h1>
-    </div>  
+    <div class="header_container">
+        <div class="header_contacts flex">
+            <div class="numebrs">
+                <p>(001) 88451234 88455438</p>
+            </div>
+            <div class="socials flex">
+                <a href="#">F</a>
+                <a href="#">X</a>
+                <a href="#">P</a>
+            </div>
+        </div>
+        <div class="header_nav flex">
+            <div class="logo">
+                <img src="../assets/img/cropped-Group-39-2x.png" alt="">
+            </div>
+            <ul class="link_list flex">
+                <li v-for="link in links">
+                    <a href="#">{{ link }}</a>
+                </li>
+            </ul>
+            <div class="search_bar">
+                <button>Purchase</button>
+                <i>L</i>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
     export default {
-        
+        data() {
+            return {
+                links: ['HOME','ABOUT','SERVICES','SHOWCASE','BLOG','CONTACT']
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
 
+//header contatti 
+.header_contacts {
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 35px;
+    background-color: #3D3D3D;
+    color: white;
+}
+
+.header_nav{
+    height: 100px;
+    border: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+//header nav
+
+.link_list {
+    gap: 15px;
+}
 </style>
