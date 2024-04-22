@@ -21,6 +21,7 @@ button {
     padding: 20px 50px;
     border-radius: 999px;
     color: white;
+    box-shadow: 0px 0px 10px rgb(139,224,100);
     background: rgb(139,224,100);
     background: linear-gradient(90deg, rgba(139,224,100,1) 27%, rgba(0,217,166,1) 90%); 
 
