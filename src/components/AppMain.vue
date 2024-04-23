@@ -149,6 +149,40 @@
             <AppButton class="blog_button" :buttonText="'VIEW ALL POST'"/>
         </div>
     </section>
+
+    <!-- sponsor section -->
+    <section class="sponsor">
+        <div class="sponsor_container">
+            <div class="cards_container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="sponsor_card project">
+                            <p class="card_subtitle">Are You Ready?</p>
+                            <h3 class="card_title">Star a New Project</h3>
+                            <div class="submit_text">
+                                <input type="text" class="text_input">
+                                <button class="submit_btn">submit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="sponsor_card start">
+                            <p class="card_subtitle">Are You Ready?</p>
+                            <h3 class="card_title">Star a New Project</h3>
+                            <AppButton class="start_button" :buttonText="'START NOW'"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sponsor_clients">
+                <div class="row">
+                    <div class="company col-2" v-for="sponsor in sponsorList"> 
+                        <img :src="`../src/assets/img/${sponsor.imgPath}`" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
@@ -220,6 +254,27 @@ import ProjectCard from './ProjectCard.vue';
                         author: 'Alex',
                         imgPath: 'simple-home-office-with-tree-PBXRXYB-large-1024x768.jpg',
                         title: 'Develop Your Starup Idea'
+                    },
+                ],
+
+                sponsorList: [
+                    {
+                        imgPath: 'client-1-2x.png',
+                    },
+                    {
+                        imgPath: 'client-9-2x.png',
+                    },
+                    {
+                        imgPath: 'client-7-2x.png',
+                    },
+                    {
+                        imgPath: 'client-3-2x.png',
+                    },
+                    {
+                        imgPath: 'client-4-2x.png',
+                    },
+                    {
+                        imgPath: 'client-5-2x.png',
                     },
                 ]
             }
@@ -530,6 +585,10 @@ import ProjectCard from './ProjectCard.vue';
                 }
 
                 .card_description{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    gap: 10px;
                     margin: 0 auto;
                     border-radius: 10px;
                     position: absolute;
@@ -541,6 +600,7 @@ import ProjectCard from './ProjectCard.vue';
                     background-color: white;
                     padding: 30px 30px;
                     text-align: left;
+                    font-size: 20px;
                     box-shadow: 0px 0px 2px lightgrey ;
 
                     .dot{
@@ -563,6 +623,96 @@ import ProjectCard from './ProjectCard.vue';
                 background: linear-gradient(90deg, rgba(139,224,100,1) 27%, rgba(0,217,166,1) 90%); 
             }
         }
+    }
+}
+
+//sponsor section
+.sponsor{
+    padding: 100px 0px;
+    .sponsor_container{
+        padding: 20px;
+
+        .sponsor_card.project{
+            background: linear-gradient(90deg, rgb(105, 105, 105) 0%, rgba(61,61,61,1) 47%, rgb(33, 33, 33) 79%);
+        }
+
+        .sponsor_card.start{
+            background: linear-gradient(90deg, rgba(139,224,100,1) 27%, rgba(0,217,166,1) 90%);
+        }
+        .sponsor_card {
+            color: white;
+            
+            border-radius: 20px;
+            text-align: center;
+            padding: 60px;
+            margin: 30px;
+
+            & > * {
+                margin-bottom: 50px ;
+            }
+
+            .card_title{
+                font-size: 45px;
+            }
+
+            .start_button{
+                margin-bottom: 0px;
+                background: linear-gradient(90deg, rgb(105, 105, 105) 0%, rgba(61,61,61,1) 47%, rgb(33, 33, 33) 79%);
+                box-shadow: 0px 0px 10px black;
+
+                &:hover{
+                    background: white;
+                    color: black;
+                }
+            }
+            .submit_text{
+                height: 56px;
+                border-radius: 999px;
+                background-color: grey;
+                color: white;
+                display: inline-block;
+                width: 500px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: flex-end;
+                .text_input{
+                    height: 100%;
+                    border-radius: inherit;
+                    background-color: inherit;
+                    color: white;
+                    border: none;
+                    flex-grow: 1;
+                    padding: 0px 30px;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+
+                .submit_btn{
+                    height: 100%;
+                    border-radius: inherit;
+                    background-color: inherit;
+                    font-weight: bold;
+                    color: white;
+                    border: none;
+                    padding: 0px 30px;
+
+                    &:hover{
+                        cursor: pointer;
+                        background-color: black;
+                    }
+                }
+            }
+        }
+    }
+
+    .company {
+        display: flex;
+        align-items: center;
+        padding: 80px;
+        img{
+            width: 100%;
+        } 
     }
 }
 </style>

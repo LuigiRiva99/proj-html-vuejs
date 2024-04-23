@@ -6,7 +6,9 @@
     display: flex;
     flex-wrap: wrap;
 }
-
+.col-2 {
+    width: calc(2 * 100% / 12);
+}
 .col-3 {
     width: calc(3 * 100% / 12);
 }
