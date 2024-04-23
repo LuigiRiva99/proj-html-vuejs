@@ -110,6 +110,23 @@
             </div>
         </div>
     </section>
+
+    <!-- client section -->
+    <section class="client">
+        <div class="client_container">
+            <div class="client_content">
+                <div><font-awesome-icon class="quote_icon" icon="fa-solid fa-quote-left" /></div>
+                <div><p class="client_quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat quisquam similique, distinctio accusantium fuga molestias tempore rerum, laborum in cumque illo explicabo nulla neque perferendis cum fugit aspernatur quas.</p></div>
+                <div class="client_image">
+                    <img :src="'../src/assets/img/businesswoman-analysing-document-P8WSNMC-1024x820.jpg'" alt="">
+                </div>
+                <div class="client_info">
+                    <h4>LISSA DURBIN</h4>
+                    <p>Client</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
@@ -373,5 +390,70 @@ import ProjectCard from './ProjectCard.vue';
         margin: 100px 0px
     }
 
+}
+
+//client section
+.client{
+    padding: 100px 0px;
+    background-image: url('../src/assets/img/four-businesspeople-in-a-boardroom-with-paperwork-PC4V8H4.jpg');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba( #424242, 0.8);
+        // background: linear-gradient(90deg, rgba(131,131,131,0.9) 0%, rgba(61,61,61,0.9) 47%, rgba(0,0,0,0.9) 79%); 
+    }
+    .client_container{
+        position: relative;
+        z-index: 1; 
+        .client_content{
+            margin: 0 auto;
+            max-width: 900px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .quote_icon{
+                font-size: 50px;
+                color: $brand-color;
+            }
+
+            .client_quote{
+                font-size: 30px;
+                font-style: italic;
+                line-height: 50px;
+            }
+            & img{
+                margin-top: 70px;
+                object-fit: cover;
+                border-radius: 50%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 150px;
+                aspect-ratio: 1/1;
+                box-shadow: 0px 0px 5px white;
+            }
+
+            .client_info{
+                margin-top: 20px;
+                h4{
+                    font-size: 20px;
+                    color: $brand-color;
+                }
+            }
+        }
+    }
 }
 </style>
