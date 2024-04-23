@@ -43,7 +43,6 @@
     </section>
 
     <!-- mission section -->
-
     <section class="mission">
         <div class="mission_container">
             <div class="row">
@@ -63,22 +62,106 @@
             </div>
         </div>
     </section>
+
+    <!-- projects section -->
+    <section class="projects">
+        <div class="projects_container">
+            <div class="projects_main">
+                <div class="row">
+                    <div class="col-6">
+                        <AppDivider/>
+                        <h2 class="projects_title">Our recent <span>web designs</span> & some examples of past <span>projects</span> </h2>
+                        <AppDivider/>
+                    </div>
+                    <div class="col-6 projects_description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quae iure eos aut odit quia cum porro in ex temporibus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="projects_images">
+                <div class="row images_container">
+                    <div v-for="project in projectFiles" class="col-3">
+                        <ProjectCard :cardTitle="project.title" :cardImage="`../src/assets/img/${project.imgPath}`"/>
+                    </div>
+                    <div class="demos">
+                        <div class="browse">
+                            <p>
+                                <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+                                Browse Demos
+                            </p>
+                        </div>
+                        <div class="buy">
+                            <p>
+                                <font-awesome-icon icon="fa-solid fa-bag-shopping" />
+                                Buy Now!
+                            </p>
+                        </div>
+                        <div class="export">
+                            <p>
+                                <font-awesome-icon icon="fa-solid fa-file-export" />
+                                Export Section
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="projects_button">
+                <AppButton :buttonText="'READ MORE'"/>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
 import AppButton from './AppButton.vue';
 import BenefitCard from './BenefitCard.vue';
-import AppDivider from './AppDivider.vue'
+import AppDivider from './AppDivider.vue';
+import ProjectCard from './ProjectCard.vue';
     export default {
         components: {
             AppButton,
             BenefitCard,
-            AppDivider
+            AppDivider,
+            ProjectCard
         },
         
         data() {
             return {
-
+                //array project cards
+                projectFiles: [
+                    {
+                        title: 'Beautiful flowers',
+                        imgPath: 'ina-soulis-227104-unsplash-1024x1024.jpg'
+                    },
+                    {
+                        title: 'A Famous Ferris Wheel',
+                        imgPath: 'sunisa-misa-531163-unsplash-1024x1024.jpg'
+                    },
+                    {
+                        title: 'Yellow Shoes',
+                        imgPath: '355H-1024x1024.jpg'
+                    },
+                    {
+                        title: 'Office Work',
+                        imgPath: 'photo-1448932252197-d19750584e56-1024x1024.jpg'
+                    },
+                    {
+                        title: 'Business Competition',
+                        imgPath: 'business-competition-PB366D8-1024x1024.jpg'
+                    },
+                    {
+                        title: 'Cozy Sofa',
+                        imgPath: 'cozy-sofa-in-living-room-PQR5AB9-1024x1024.jpg'
+                    },
+                    {
+                        title: 'Hot Air Balloons',
+                        imgPath: 'aa9a4539-PQGJ7HU-1024x1024.jpg'
+                    },
+                    {
+                        title: 'Blue Lime',
+                        imgPath: 'cody-davis-253928-unsplash-1024x1024.jpg'
+                    },
+                ]
             }
         }
     }
@@ -235,5 +318,60 @@ import AppDivider from './AppDivider.vue'
             margin-top: 20px;
         }
     }
+}
+
+//projects section
+.projects{
+    padding: 100px 0px;
+    .projects_main{
+        margin: 0px 20px;
+        .projects_title{
+            font-size: 50px;
+    
+            span {
+                color: $brand-color;
+            }
+        }
+
+        .projects_description{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .images_container{
+        row-gap: 0px;
+        position: relative;
+        .demos{
+            position: absolute;
+            right: 0;
+            top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            z-index: 999;
+            .browse, .buy, .export {
+                background-color: rgba( rgb(97, 97, 97),0.5);
+                width: fit-content;
+                padding: 10px;
+                border-radius: 10px 0px 0px 10px;
+                margin: 5px 0px;
+                color: white;
+
+                &:hover{
+                    background-color: rgba( black,1);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    
+    .projects_button{
+        display: flex;
+        justify-content: center;
+        margin: 100px 0px
+    }
+
 }
 </style>

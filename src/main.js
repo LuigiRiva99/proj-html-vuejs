@@ -13,12 +13,14 @@ import {
     faCloud,
     faTabletScreenButton,
     faStopwatch,
-    faGaugeHigh
+    faGaugeHigh,
+    faBagShopping,
+    faFileExport
 } from '@fortawesome/free-solid-svg-icons'
 
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faSearch,fab,faCloud,faTabletScreenButton,faStopwatch,faGaugeHigh)
+library.add(faSearch,fab,faCloud,faTabletScreenButton,faStopwatch,faGaugeHigh,faBagShopping,faFileExport)
 
 const app = createApp(App)
 
