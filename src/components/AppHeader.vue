@@ -15,7 +15,7 @@
                 <img src="../assets/img/cropped-Group-39-2x.png" alt="">
             </div>
             <ul class="link_list flex">
-                <li v-for="link in links">
+                <li v-for="link in navLinks">
                     <a :href="link.url">{{ link.text }}</a>
                 </li>
             </ul>
@@ -33,34 +33,15 @@ import AppButton from './AppButton.vue'
         components: {
             AppButton
         },
+
+        props:{
+            navLinks : {
+                type: Array
+            }
+        },
+
         data() {
             return {
-                links: [
-                    {
-                        text: 'HOME',
-                        url: '#'
-                    },
-                    {
-                        text: 'ABOUT',
-                        url: '#'
-                    },
-                    {
-                        text: 'SERVICES',
-                        url: '#'
-                    },
-                    {
-                        text: 'SHOWCASE',
-                        url: '#'
-                    },
-                    {
-                        text: 'BLOG',
-                        url: '#'
-                    },
-                    {
-                        text: 'CONTACT',
-                        url: '#'
-                    },
-                ],
                 buttonText: 'PURCHASE'
             }
         }

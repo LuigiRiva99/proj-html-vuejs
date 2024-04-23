@@ -558,7 +558,7 @@ import ProjectCard from './ProjectCard.vue';
 //blog section
 .blog{
     padding: 100px 0px;
-    background-color: #FFFFFF;
+    background-color: #F9F9F9;
     .blog_container{
         width: 100%;
         text-align: center;
@@ -628,6 +628,7 @@ import ProjectCard from './ProjectCard.vue';
 
 //sponsor section
 .sponsor{
+    background-color: #F9F9F9;
     padding: 100px 0px;
     .sponsor_container{
         padding: 20px;
