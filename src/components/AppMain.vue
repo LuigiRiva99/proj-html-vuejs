@@ -127,6 +127,28 @@
             </div>
         </div>
     </section>
+
+    <!-- blog section -->
+    <section class="blog">
+        <div class="blog_container">
+            <h2 class="blog_title">Latest News & Our <span>Blog</span></h2>
+            <AppDivider class="blog_divider"/>
+            <div class="blog_cards">
+                <div class="row">
+                    <div class="col-4" v-for="news in newsList">
+                        <div class="card">
+                            <img :src="`../src/assets/img/${news.imgPath}`" alt="">
+                            <div class="card_description">
+                                <p>{{ news.date }} by {{ news.author }}</p>
+                                <h3><font-awesome-icon class="dot" icon="fa-solid fa-circle" />{{news.title}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <AppButton class="blog_button" :buttonText="'VIEW ALL POST'"/>
+        </div>
+    </section>
 </template>
 
 <script>
@@ -177,6 +199,27 @@ import ProjectCard from './ProjectCard.vue';
                     {
                         title: 'Blue Lime',
                         imgPath: 'cody-davis-253928-unsplash-1024x1024.jpg'
+                    },
+                ],
+
+                newsList: [
+                    {
+                        date: 'May 24 2018',
+                        author: 'Alex',
+                        imgPath: 'serious-businesswoman-with-documents-talking-on-P9Q6LX6-1024.jpg',
+                        title: 'Marketing Ideas'
+                    },
+                    {
+                        date: 'June 13 2018',
+                        author: 'Alex',
+                        imgPath: 'Businessman-at-the-desk-in-his-office-resting--1024x768.jpg',
+                        title: 'Rest During Working Hours'
+                    },
+                    {
+                        date: 'July 22 2018',
+                        author: 'Alex',
+                        imgPath: 'simple-home-office-with-tree-PBXRXYB-large-1024x768.jpg',
+                        title: 'Develop Your Starup Idea'
                     },
                 ]
             }
@@ -452,6 +495,72 @@ import ProjectCard from './ProjectCard.vue';
                     font-size: 20px;
                     color: $brand-color;
                 }
+            }
+        }
+    }
+}
+
+//blog section
+.blog{
+    padding: 100px 0px;
+    background-color: #FFFFFF;
+    .blog_container{
+        width: 100%;
+        text-align: center;
+        .blog_title{
+            font-size: 50px;
+    
+            span{
+                color: $brand-color;
+            }
+        }
+
+        .blog_divider{
+            display: flex;
+            justify-content: center;
+        }
+
+        .blog_cards{
+            .card{
+                padding: 15px;
+                position: relative;
+                margin-bottom: 50px;
+                img {
+                    border-radius: 20px;
+                }
+
+                .card_description{
+                    margin: 0 auto;
+                    border-radius: 10px;
+                    position: absolute;
+                    width: 80%;
+                    height: 30%;
+                    bottom: -10px;
+                    left: 50%;
+                    transform: translate(-50%, 0%);
+                    background-color: white;
+                    padding: 30px 30px;
+                    text-align: left;
+                    box-shadow: 0px 0px 2px lightgrey ;
+
+                    .dot{
+                        font-size: 10px;
+                        padding-bottom: 3px;
+                        margin-right: 10px;
+                        color: $brand-color
+                    }
+                }
+            }
+        }
+
+        .blog_button {
+            background: rgb(131,131,131);
+            background: linear-gradient(90deg, rgba(131,131,131,1) 0%, rgba(61,61,61,1) 47%, rgba(0,0,0,1) 79%); 
+    
+            &:hover{
+                cursor: pointer;
+                background: rgb(139,224,100);
+                background: linear-gradient(90deg, rgba(139,224,100,1) 27%, rgba(0,217,166,1) 90%); 
             }
         }
     }
