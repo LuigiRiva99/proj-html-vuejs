@@ -28,6 +28,7 @@
 </script>
 
 <style lang="scss" scoped>
+@use '../style/partials/mixins' as *;
 .card_container{
     margin: 2px 4px;
     position: relative;
@@ -42,7 +43,8 @@
         height: 100%;
         top: 0;
         left: 0;
-        background: linear-gradient(90deg, rgba(139,224,100,0.8) 27%, rgba(0,217,166,0.8) 90%); 
+        @include gradient-green;
+        opacity: 0.8; 
         z-index: 1;
         border-radius: 10px;
 

@@ -161,14 +161,14 @@
                             <h3 class="card_title">Star a New Project</h3>
                             <div class="submit_text">
                                 <input type="text" class="text_input">
-                                <button class="submit_btn">submit</button>
+                                <button class="submit_btn">SUBMIT</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="sponsor_card start">
-                            <p class="card_subtitle">Are You Ready?</p>
-                            <h3 class="card_title">Star a New Project</h3>
+                            <p class="card_subtitle">What Are You Waiting for?</p>
+                            <h3 class="card_title">Let's Talk About Work</h3>
                             <AppButton class="start_button" :buttonText="'START NOW'"/>
                         </div>
                     </div>
@@ -183,6 +183,21 @@
             </div>
         </div>
     </section>
+
+    <!-- fixed buttons -->
+    <div class="fixed_buttons">
+        <a href="#">
+            <div class="arrow_button">
+                <font-awesome-icon icon="fa-solid fa-arrow-up" />
+            </div>
+        </a>
+        <a href="#">
+            <div class="chat_message">
+                
+                <font-awesome-icon :icon="['far', 'comment']" class="message_icon" />
+            </div>
+        </a>
+    </div>
 </template>
 
 <script>
@@ -284,6 +299,7 @@ import ProjectCard from './ProjectCard.vue';
 
 <style lang="scss" scoped>
 @use '../style/partials/variables' as *;
+@use '../style/partials/mixins' as *;
 //intro section
 .intro_section {
     align-items: center;
@@ -298,7 +314,7 @@ import ProjectCard from './ProjectCard.vue';
     
         .intro_title{
             margin: 10px 0px;
-            font-size: 64px;
+            font-size: 70px;
     
             .title_agency{
                 color: $brand-color;
@@ -320,13 +336,15 @@ import ProjectCard from './ProjectCard.vue';
         }
     
         .intro_button {
-            background: rgb(131,131,131);
-            background: linear-gradient(90deg, rgba(131,131,131,1) 0%, rgba(61,61,61,1) 47%, rgba(0,0,0,1) 79%); 
+            // background: rgb(131,131,131);
+            // background: linear-gradient(90deg, rgba(131,131,131,1) 0%, rgba(61,61,61,1) 47%, rgba(0,0,0,1) 79%); 
+            @include button-black;
     
             &:hover{
                 cursor: pointer;
-                background: rgb(139,224,100);
-                background: linear-gradient(90deg, rgba(139,224,100,1) 27%, rgba(0,217,166,1) 90%); 
+                // background: rgb(139,224,100);
+                // background: linear-gradient(90deg, rgba(139,224,100,1) 27%, rgba(0,217,166,1) 90%); 
+                @include button-green
             }
         }
     
@@ -342,8 +360,7 @@ import ProjectCard from './ProjectCard.vue';
     
         .page_selector {
             border-radius: 999px;
-            background: rgb(131,131,131);
-            background: linear-gradient(90deg, rgba(131,131,131,1) 0%, rgba(61,61,61,1) 47%, rgb(44, 44, 44) 79%); 
+            @include gradient-black;
             color: white;
     
             & > * {
@@ -354,8 +371,7 @@ import ProjectCard from './ProjectCard.vue';
             }
     
             .page_one{
-                background: rgb(139,224,100);
-                background: linear-gradient(90deg, rgba(139,224,100,1) 27%, rgba(0,217,166,1) 90%); 
+                @include gradient-green; 
             }
         }
     }
@@ -388,7 +404,7 @@ import ProjectCard from './ProjectCard.vue';
     background-color: #F9F9F9;
     .mission_images{
         position: relative;
-        width: 500px;
+        width: 800px;
         height: 100%;
         .background_image{
             border-radius: 0px 20px 20px 0px;
@@ -420,6 +436,7 @@ import ProjectCard from './ProjectCard.vue';
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        padding: 0px 100px;
     
         .mission_title{
             font-size: 50px;
@@ -437,7 +454,7 @@ import ProjectCard from './ProjectCard.vue';
 
 //projects section
 .projects{
-    padding: 100px 0px;
+    padding: 200px 0px;
     .projects_main{
         margin: 0px 20px;
         .projects_title{
@@ -458,6 +475,7 @@ import ProjectCard from './ProjectCard.vue';
     .images_container{
         row-gap: 0px;
         position: relative;
+        padding: 0px 20px;
         .demos{
             position: absolute;
             right: 0;
@@ -492,7 +510,7 @@ import ProjectCard from './ProjectCard.vue';
 
 //client section
 .client{
-    padding: 100px 0px;
+    padding: 200px 0px;
     background-image: url('../src/assets/img/four-businesspeople-in-a-boardroom-with-paperwork-PC4V8H4.jpg');
     background-size: 100%;
     background-position: center;
@@ -614,13 +632,11 @@ import ProjectCard from './ProjectCard.vue';
         }
 
         .blog_button {
-            background: rgb(131,131,131);
-            background: linear-gradient(90deg, rgba(131,131,131,1) 0%, rgba(61,61,61,1) 47%, rgba(0,0,0,1) 79%); 
+            @include gradient-black;
     
             &:hover{
                 cursor: pointer;
-                background: rgb(139,224,100);
-                background: linear-gradient(90deg, rgba(139,224,100,1) 27%, rgba(0,217,166,1) 90%); 
+                @include gradient-green;
             }
         }
     }
@@ -714,6 +730,52 @@ import ProjectCard from './ProjectCard.vue';
         img{
             width: 100%;
         } 
+    }
+}
+
+//fixed buttons
+.fixed_buttons{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    .arrow_button,
+    .chat_message {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+    }
+
+    .arrow_button{
+        width: 40px;
+        border: 1px solid black;
+        // height: 40px;
+
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+    }
+
+    .chat_message{
+        width: 60px;
+        background-color: #527CEB;
+        color: white;
+
+        &:hover{
+            background-color: $brand-color;
+            color: white;
+            border: 2px solid $brand-color;
+        }
+
+        .message_icon{
+            font-size: 25px;
+        }
     }
 }
 </style>

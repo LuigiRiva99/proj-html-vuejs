@@ -22,7 +22,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+@use '../style/partials/mixins' as *;
 .card{
     border-radius: 10px;
     padding: 20px;
@@ -31,8 +31,7 @@
     box-shadow: 0px 0px 10px #AAAAAA;
 
     &:hover{
-        background: rgb(139,224,100);
-        background: linear-gradient(90deg, rgba(139,224,100,1) 27%, rgba(0,217,166,1) 90%); 
+        @include gradient-green;
         color: white;
         cursor: pointer;
     }
