@@ -74,7 +74,7 @@
                         <AppDivider/>
                     </div>
                     <div class="col-6 projects_description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quae iure eos aut odit quia cum porro in ex temporibus.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem quas ducimus omnis sequi facere eius, voluptates iure asperiores odio, quidem laboriosam saepe dolores aperiam nihil aut pariatur magni sint. Doloremque nemo excepturi odit laboriosam ipsa maiores illo nobis quia doloribus.</p>
                     </div>
                 </div>
             </div>
@@ -325,6 +325,8 @@ import ProjectCard from './ProjectCard.vue';
             letter-spacing: 5px;
             color: $brand-color;
             font-weight: bold;
+            font-size: 25px;
+            margin-bottom: 0px;
         }
     
         .intro_subtitle {
@@ -404,8 +406,7 @@ import ProjectCard from './ProjectCard.vue';
     background-color: #F9F9F9;
     .mission_images{
         position: relative;
-        width: 800px;
-        height: 100%;
+        max-width: 900px;
         .background_image{
             border-radius: 0px 20px 20px 0px;
             height: 100%;
@@ -456,7 +457,7 @@ import ProjectCard from './ProjectCard.vue';
 .projects{
     padding: 200px 0px;
     .projects_main{
-        margin: 0px 20px;
+        margin: 0px 30px;
         .projects_title{
             font-size: 50px;
     
@@ -475,7 +476,7 @@ import ProjectCard from './ProjectCard.vue';
     .images_container{
         row-gap: 0px;
         position: relative;
-        padding: 0px 20px;
+        padding: 0px 30px;
         .demos{
             position: absolute;
             right: 0;
@@ -483,7 +484,7 @@ import ProjectCard from './ProjectCard.vue';
             display: flex;
             flex-direction: column;
             align-items: end;
-            z-index: 999;
+            z-index: 3;
             .browse, .buy, .export {
                 background-color: rgba( rgb(97, 97, 97),0.5);
                 width: fit-content;
@@ -542,6 +543,7 @@ import ProjectCard from './ProjectCard.vue';
             .quote_icon{
                 font-size: 50px;
                 color: $brand-color;
+                margin-bottom: 30px;
             }
 
             .client_quote{
@@ -563,10 +565,11 @@ import ProjectCard from './ProjectCard.vue';
             }
 
             .client_info{
-                margin-top: 20px;
+                margin-top: 30px;
                 h4{
-                    font-size: 20px;
+                    font-size: 30px;
                     color: $brand-color;
+                    margin-bottom: 10px;
                 }
             }
         }
@@ -621,6 +624,11 @@ import ProjectCard from './ProjectCard.vue';
                     font-size: 20px;
                     box-shadow: 0px 0px 2px lightgrey ;
 
+                    p{
+                        margin-left: 20px;
+                        color: grey;
+                    }
+
                     .dot{
                         font-size: 10px;
                         padding-bottom: 3px;
@@ -632,11 +640,11 @@ import ProjectCard from './ProjectCard.vue';
         }
 
         .blog_button {
-            @include gradient-black;
+            @include button-black;
     
             &:hover{
                 cursor: pointer;
-                @include gradient-green;
+                @include button-green;
             }
         }
     }
@@ -726,7 +734,7 @@ import ProjectCard from './ProjectCard.vue';
     .company {
         display: flex;
         align-items: center;
-        padding: 80px;
+        padding: 90px;
         img{
             width: 100%;
         } 
@@ -741,6 +749,7 @@ import ProjectCard from './ProjectCard.vue';
     position: fixed;
     bottom: 20px; 
     right: 20px; 
+    z-index: 999;
     .arrow_button,
     .chat_message {
         display: flex;
@@ -754,6 +763,7 @@ import ProjectCard from './ProjectCard.vue';
     .arrow_button{
         width: 40px;
         border: 1px solid black;
+        background-color: white;
         // height: 40px;
 
         &:hover{

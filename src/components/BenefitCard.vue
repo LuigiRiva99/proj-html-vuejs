@@ -25,10 +25,14 @@
 @use '../style/partials/mixins' as *;
 .card{
     border-radius: 10px;
-    padding: 20px;
+    padding: 50px;
     color: #3E3E3E;
-    height: 250px;
+    height: 300px;
     box-shadow: 0px 0px 10px #AAAAAA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
 
     &:hover{
         @include gradient-green;
@@ -40,7 +44,7 @@
         padding: 10px 0px;
     }
     .card_icon {
-        font-size: 40px;
+        font-size: 50px;
     }
 }
 </style>
