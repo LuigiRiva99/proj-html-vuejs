@@ -48,9 +48,9 @@
             <div class="row">
                 <div class="col-6">
                     <div class="mission_images">
-                        <img class="background_image" :src="'../src/assets/img/busy-architect-PYVKWM4-1024x872.jpg'" alt="">
+                        <img class="background_image" :src="'/assets/img/busy-architect-PYVKWM4-1024x872.jpg'" alt="">
                         <div class="overlay_gradient"></div>
-                        <img class="main_image" :src="'../src/assets/img/businesswoman-analysing-document-P8WSNMC-1024x820.jpg'" alt="">
+                        <img class="main_image" :src="'/assets/img/businesswoman-analysing-document-P8WSNMC-1024x820.jpg'" alt="">
                     </div> 
                 </div>
                 <div class="col-6 mission_info">
@@ -81,7 +81,7 @@
             <div class="projects_images">
                 <div class="row images_container">
                     <div v-for="project in projectFiles" class="col-3">
-                        <ProjectCard :cardTitle="project.title" :cardImage="`../src/assets/img/${project.imgPath}`"/>
+                        <ProjectCard :cardTitle="project.title" :cardImage="`/assets/img/${project.imgPath}`"/>
                     </div>
                     <div class="demos">
                         <div class="browse">
@@ -118,7 +118,7 @@
                 <div><font-awesome-icon class="quote_icon" icon="fa-solid fa-quote-left" /></div>
                 <div><p class="client_quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugiat quisquam similique, distinctio accusantium fuga molestias tempore rerum, laborum in cumque illo explicabo nulla neque perferendis cum fugit aspernatur quas.</p></div>
                 <div class="client_image">
-                    <img :src="'../src/assets/img/businesswoman-analysing-document-P8WSNMC-1024x820.jpg'" alt="">
+                    <img :src="'/assets/img/businesswoman-analysing-document-P8WSNMC-1024x820.jpg'" alt="">
                 </div>
                 <div class="client_info">
                     <h4>LISSA DURBIN</h4>
@@ -137,7 +137,7 @@
                 <div class="row">
                     <div class="col-4" v-for="news in newsList">
                         <div class="card">
-                            <img :src="`../src/assets/img/${news.imgPath}`" alt="">
+                            <img :src="`/assets/img/${news.imgPath}`" alt="">
                             <div class="card_description">
                                 <p>{{ news.date }} by {{ news.author }}</p>
                                 <h3><font-awesome-icon class="dot" icon="fa-solid fa-circle" />{{news.title}}</h3>
@@ -177,7 +177,7 @@
             <div class="sponsor_clients">
                 <div class="row">
                     <div class="company col-2" v-for="sponsor in sponsorList"> 
-                        <img :src="`../src/assets/img/${sponsor.imgPath}`" alt="">
+                        <img :src="`/assets/img/${sponsor.imgPath}`" alt="">
                     </div>
                 </div>
             </div>
@@ -304,7 +304,7 @@ import ProjectCard from './ProjectCard.vue';
 .intro_section {
     align-items: center;
     height: 900px;
-    background-image: url('../src/assets/img/Group-36-2x.png');
+    background-image: url('/assets/img/Group-36-2x.png');
     background-size: 60%;
     background-position: right center;
     background-repeat: no-repeat;
@@ -512,7 +512,7 @@ import ProjectCard from './ProjectCard.vue';
 //client section
 .client{
     padding: 200px 0px;
-    background-image: url('../src/assets/img/four-businesspeople-in-a-boardroom-with-paperwork-PC4V8H4.jpg');
+    background-image: url('/assets/img/four-businesspeople-in-a-boardroom-with-paperwork-PC4V8H4.jpg');
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
