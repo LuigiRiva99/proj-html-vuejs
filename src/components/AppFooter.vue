@@ -26,7 +26,7 @@
                 <div class="company_map col-3">
                     <h2>LOCATION ON MAP</h2>
                     <AppDivider/>
-                    <img :src="'../src/assets/img/map.png'" alt="">
+                    <img :src="'/assets/img/map.png'" alt="">
                 </div>
             </div>
         </div>
